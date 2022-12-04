@@ -24,6 +24,9 @@ stats:
 logs:
 	@docker-compose logs https-portal
 
+logs-api-server:
+	@docker-compose logs dtrack-apiserver
+
 clean:
 	@docker-compose down -v --remove-orphans
 
