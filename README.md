@@ -18,6 +18,27 @@ cargar [la página principal del servidor de API](https://api.dependencytrack.te
 
 Después ya se puede acceder a [la web principal](https://dependencytrack.test) con `admin/admin`.
 
+> Si el servidor se para al procesar ficheros, revisar la cantidad de memoria asignada a Docker. Necesita disponer de al
+> menos 8GB para funcionar bien.
+
+## Crear ficheros SBOM
+
+Instalar [Syft](https://github.com/anchore/syft/) y generar ficheros SBOM de tipo CycloneDX.
+
+Escanear una imagen de Docker:
+
+```
+syft alpine:latest --file sbom.xml -o cyclonedx
+```
+
+Escanear una carpeta:
+
+```
+syft dir:. --file sbom.xml -o cyclonedx
+```
+
 ## Referencias
 
-[Deploying Docker Container](https://docs.dependencytrack.org/getting-started/deploy-docker/)
+- [Deploying Docker Container](https://docs.dependencytrack.org/getting-started/deploy-docker/)
+- [How to Generate an SBOM with Free Open Source Tools](https://anchore.com/sbom/how-to-generate-an-sbom-with-free-open-source-tools/)
+- [Syft](https://github.com/anchore/syft/)
