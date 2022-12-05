@@ -9,7 +9,7 @@ help:
 	@echo "clean"
 
 start:
-	@docker-compose up -d
+	@docker-compose up -d --remove-orphans
 	@$(MAKE) _urls
 
 stop:
