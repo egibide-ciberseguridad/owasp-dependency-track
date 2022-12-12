@@ -22,7 +22,7 @@ stop:
 	@docker compose stop
 
 stop-all:
-	@docker stop `docker ps -aq`
+	@docker stop $(shell docker ps -aq)
 
 stats:
 	@docker stats
