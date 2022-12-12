@@ -15,11 +15,11 @@ _header:
 	@echo ----------------------
 
 start:
-	@docker-compose up -d --remove-orphans
+	@docker compose up -d --remove-orphans
 	@$(MAKE) _urls
 
 stop:
-	@docker-compose stop
+	@docker compose stop
 
 stop-all:
 	@docker stop `docker ps -aq`
@@ -28,13 +28,13 @@ stats:
 	@docker stats
 
 logs:
-	@docker-compose logs https-portal
+	@docker compose logs https-portal
 
 logs-api-server:
-	@docker-compose logs dtrack-apiserver
+	@docker compose logs dtrack-apiserver
 
 clean:
-	@docker-compose down -v --remove-orphans
+	@docker compose down -v --remove-orphans
 
 _urls: _header
 	${info }
