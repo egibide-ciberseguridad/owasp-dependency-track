@@ -1,12 +1,18 @@
-help:
-	@echo "----------------------"
-	@echo "OWASP Dependency-Track"
-	@echo "----------------------"
-	@echo "Opciones:"
-	@echo ""
-	@echo "start / stop / stop-all"
-	@echo "stats / logs"
-	@echo "clean"
+#!make
+
+help: _header
+	${info }
+	@echo Opciones:
+	@echo -----------------------
+	@echo start / stop / stop-all
+	@echo stats / logs
+	@echo clean
+	@echo -----------------------
+
+_header:
+	@echo ----------------------
+	@echo OWASP Dependency-Track
+	@echo ----------------------
 
 start:
 	@docker-compose up -d --remove-orphans
@@ -30,8 +36,8 @@ logs-api-server:
 clean:
 	@docker-compose down -v --remove-orphans
 
-_urls:
-	@echo ""
-	@echo "-----------------------------------------------------"
-	@echo "[OWASP Dependency-Track] https://dependencytrack.test"
-	@echo "-----------------------------------------------------"
+_urls: _header
+	${info }
+	@echo -----------------------------------------------------
+	@echo [OWASP Dependency-Track] https://dependencytrack.test
+	@echo -----------------------------------------------------
