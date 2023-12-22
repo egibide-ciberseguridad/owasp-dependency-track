@@ -28,13 +28,13 @@ Instalar [Syft](https://github.com/anchore/syft/) y generar ficheros SBOM de tip
 Escanear una imagen de Docker:
 
 ```
-syft alpine:latest --file sbom.xml -o cyclonedx
+syft alpine:latest --output cyclonedx=sbom.xml
 ```
 
 Escanear una carpeta:
 
 ```
-syft dir:. --file sbom.xml -o cyclonedx
+syft dir:. --output cyclonedx=sbom.xml
 ```
 
 ## Referencias
