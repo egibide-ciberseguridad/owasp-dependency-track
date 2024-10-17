@@ -1,12 +1,4 @@
-version: '3.7'
-
-volumes:
-  dependency-track:
-  https-portal_certs:
-  https-portal_logs:
-
 services:
-
   https-portal:
     image: steveltn/https-portal:${HTTPS_PORTAL_VERSION:-1}
     environment:
@@ -44,3 +36,8 @@ services:
       - API_BASE_URL=https://api.dependencytrack.test
     expose:
       - 8080
+
+volumes:
+  dependency-track:
+  https-portal_certs:
+  https-portal_logs:
