@@ -13,7 +13,7 @@ Añadir dos entradas al fichero de hosts:
 
 Clonar este repositorio y arrancarlo con `make start`.
 
-La primera vez que se vaya a acceder hay que
+⚠️ La primera vez que se vaya a acceder hay que
 cargar [la página principal del servidor de API](https://api.dependencytrack.test) y aceptar el certificado autofirmado.
 
 Después ya se puede acceder a [la web principal](https://dependencytrack.test) con `admin/admin`.
