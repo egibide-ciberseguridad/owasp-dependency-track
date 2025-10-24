@@ -30,6 +30,12 @@ Escanear una imagen de Docker:
 ```
 syft alpine:latest --output cyclonedx=sbom.xml
 ```
+Exportar una imagen local y escanearla:
+
+```
+docker save blog-php -o blog-php.tar
+syft docker-archive:blog-php.tar --output cyclonedx=blog-php.xml
+```
 
 Escanear una carpeta:
 
